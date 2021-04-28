@@ -5,13 +5,15 @@ import Card from '../UI/Card/Card';
 const UsersList = props => {
 	return (
 		<Card className={classes.users}>
-			<ul>
-				{props.users.map((user, idx) => (
-					<li key={idx}>
-						{user.name} ({user.age} years old)
-					</li>
-				))}
-			</ul>
+			{props.users ? (
+				<ul>
+					{props.users.map((user, idx) => (
+						<li key={idx}>
+							{user.name} ({user.age} years old)
+						</li>
+					))}
+				</ul>
+			) : null}
 		</Card>
 	);
 };
