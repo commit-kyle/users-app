@@ -19,13 +19,15 @@ const AddUser = props => {
 
 	const AddUserHandler = e => {
 		e.preventDefault();
-
+		
     if (username.trim().length === 0 || age.trim().length === 0) {
-      return;
+			return;
     }
     if (+age < 1) {
-      return;
+			return;
     }
+		
+		props.onAddUser(username, age)
 
     setUsername('');
     setAge('');
